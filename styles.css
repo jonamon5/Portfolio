@@ -1,0 +1,144 @@
+/* Global Styles */
+body {
+	margin: 0;
+	font-family: Arial, sans-serif;
+	background: #f4f4f4;
+	color: #333;
+	line-height: 1.6;
+  }
+  
+  /* Landing Section */
+  .landing {
+	position: relative;
+	height: 100vh;
+	background: #282c34;
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding: 0 20px;
+	overflow: hidden;
+  }
+  
+  /* Container for the main name keys */
+  .keyboard {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	justify-content: center;
+	margin-bottom: 20px;
+	z-index: 2;
+  }
+  
+  /* Each word is an inline container that doesn't wrap internally */
+  .word {
+	display: inline-flex;
+	white-space: nowrap;
+	gap: 10px;
+  }
+  
+  /* Spacer between words */
+  .spacer {
+	width: 20px;
+	display: inline-block;
+  }
+  
+  /* Style for main name keys */
+  .key {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	background: linear-gradient(145deg, #1e1e1e, #333);
+	border: 2px solid #555;
+	border-radius: 8px;
+	font-size: 1.5em;
+	color: #fff;
+	box-shadow: 4px 4px 8px #1a1a1a, -4px -4px 8px #3a3a3a;
+	cursor: pointer;
+	opacity: 0;
+	transform: translateY(50px) rotate(var(--angle));
+	animation: pressIn 0.5s forwards;
+	/* Delay is set per key using the custom property --delay */
+	animation-delay: var(--delay);
+	transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  /* Hover effect for main keys */
+  .keyboard .key:hover {
+	transform: translateY(4px) rotate(var(--angle));
+	box-shadow: 2px 2px 4px #1a1a1a, -2px -2px 4px #3a3a3a;
+  }
+  
+  /* Keyframe animation for "press in" effect */
+  @keyframes pressIn {
+	to {
+	  opacity: 1;
+	  transform: rotate(var(--angle));
+	}
+  }
+  
+  /* Bio Section */
+  .bio {
+	margin-top: 1rem;
+	max-width: 60%;
+	font-size: 1.2em;
+	z-index: 2;
+  }
+  
+  /* Decorative Floating Keys */
+  .floating-keys {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 1;
+  }
+  .floating-key {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	background: linear-gradient(145deg, #1e1e1e, #333);
+	border: 2px solid #555;
+	border-radius: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.2em;
+	color: #fff;
+	/* Flat appearance: no box-shadow */
+	box-shadow: none;
+  }
+  
+  /* Projects Section */
+  .projects {
+	padding: 40px 20px;
+	background: #fff;
+	color: #333;
+  }
+  .projects h2 {
+	text-align: center;
+	margin-bottom: 30px;
+  }
+  .project-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 20px;
+	max-width: 1200px;
+	margin: 0 auto;
+  }
+  .project-card {
+	background: #fafafa;
+	border: 1px solid #ddd;
+	padding: 20px;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+	transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .project-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
+  
